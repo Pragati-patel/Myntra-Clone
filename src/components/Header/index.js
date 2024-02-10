@@ -168,7 +168,7 @@ export default function Header() {
       className="w-full !bg-white"
       sx={{ boxShadow: "0 4px 12px 0 rgba(0,0,0,.05)" }}
     >
-      <AppBar position="static">
+      <AppBar position="static" sx={{ backgroundColor: "#fff" }}>
         <Toolbar>
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Myntra_Logo.png"
