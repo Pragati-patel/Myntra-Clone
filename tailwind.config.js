@@ -21,6 +21,8 @@ module.exports = {
         535766: "#535766",
         FAFBFC: "#FAFBFC",
         "696b79": "#696b79",
+        424553: "#424553",
+        ff3c6f: "#ff3c6f",
       },
       fontSize: {
         10: "10px",

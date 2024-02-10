@@ -1,0 +1,36 @@
+.wrapper {
+  @apply flex w-full bg-[#fce6eb] h-full py-8;
+}
+.login_card {
+  @apply max-w-[400px] w-[400px] flex mx-auto flex-col;
+}
+.login_content {
+  @apply bg-white w-full p-[36px] flex flex-col;
+}
+.heading {
+  @apply text-424553 text-20 font-Assistant font-bold;
+}
+.or_style {
+  @apply text-[#535766] text-16 font-Assistant font-normal;
+}
+.info_line {
+  @apply flex text-[13px] text-[rgba(40,44,63,.8)] font-Assistant font-medium py-[20px];
+}
+.pink_text {
+  @apply text-ff3c6f flex whitespace-nowrap font-Assistant px-1 font-medium;
+}
+.continue {
+  @apply bg-ff3f6c text-white text-14 font-bold font-Assistant leading-[16px] flex justify-center items-center p-3 cursor-pointer;
+}
+.form_input {
+  @apply border border-[#d4d5d9] w-full p-[10px] text-14 leading-[16px] text-282c3f mt-4 outline-none;
+}
+.error {
+  @apply text-red-500 text-12 font-Assistant;
+}
+
+.form_input::-webkit-outer-spin-button,
+.form_input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
