@@ -18,20 +18,36 @@
 //   )
 // }
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import { CTABannerImg, ShopByCategoryImg } from "@/assets/ImagesLink";
 import Card from "./Card";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProduct } from "@/Redux/slice";
 
 export default function ShopByCategory() {
-  const Cards = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6, 2, 4, 4, 63];
+  const [Cards, setCards] = useState(null);
+  const dispatch = useDispatch();
+  //   const Cards = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6, 2, 4, 4, 63];
 
-  // Calculate the number of columns needed for the grid
+  const { productList, isLoading, error } = useSelector(
+    (state) => state.product.value,
+  );
+
+  useEffect(() => {
+    dispatch(fetchProduct());
+  }, []);
+  useEffect(() => {
+    setCards(productList);
+  }, [productList]);
   const numColumns = 6;
-  const numRows = Math.ceil(Cards.length / numColumns);
+  let numRows = Math.ceil(Cards?.length / numColumns);
 
-  // Calculate the number of cards in the last row
-  const numCardsInLastRow = Cards.length % numColumns || numColumns;
+  let numCardsInLastRow = Cards?.length % numColumns || numColumns;
+  useEffect(() => {
+    numRows = Math.ceil(Cards?.length / numColumns);
+    numCardsInLastRow = Cards?.length % numColumns || numColumns;
+  }, [Cards]);
 
   return (
     <div className={styles.wrapper}>
@@ -55,9 +71,7 @@ export default function ShopByCategory() {
               },
               (_, colIndex) => (
                 <div key={colIndex.toString()} className="mr-8">
-                  {" "}
-                  {/* Add margin to each card */}
-                  <Card />
+                  <Card data={Cards[rowIndex * numColumns + colIndex]} />
                 </div>
               ),
             )}
