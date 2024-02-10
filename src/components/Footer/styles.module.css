@@ -1,0 +1,29 @@
+.wrapper {
+  @apply w-full bg-FAFBFC px-[130px] py-[40px];
+}
+.item {
+  @apply text-696b79 text-[15px] pb-[5px] font-Assistant capitalize;
+}
+.heading {
+  @apply flex font-Assistant font-bold text-12;
+}
+.top_wrapper {
+  @apply flex;
+}
+.first_col,
+.second_col {
+  @apply pr-[20px] flex flex-col w-[20%];
+}
+.third_col {
+  @apply pr-[20px] w-[360px];
+}
+.fourth_col {
+  @apply pr-[20px] flex flex-col w-[280px];
+}
+
+.bold_text {
+  @apply text-282c3f font-Assistant font-bold text-16;
+}
+.normal_text {
+  @apply text-696b79 font-Assistant text-16 font-normal w-full;
+}

@@ -19,6 +19,8 @@ module.exports = {
         "282c3f": "#282c3f",
         ff3f6c: "#ff3f6c",
         535766: "#535766",
+        FAFBFC: "#FAFBFC",
+        "696b79": "#696b79",
       },
       fontSize: {
         10: "10px",
