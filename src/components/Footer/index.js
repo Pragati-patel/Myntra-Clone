@@ -1,6 +1,11 @@
 import React from "react";
 import styles from "./styles.module.css";
-import { CustomerPolicies, OnlineShopping, UsefulLinks } from "./Data";
+import {
+  BottomContent,
+  CustomerPolicies,
+  OnlineShopping,
+  UsefulLinks,
+} from "./Data";
 import {
   AppStore,
   FooterOriginalTag,
@@ -122,6 +127,19 @@ const FooterContentSection = () => {
         |Watches| Dresses | Lehenga| Nike Shoes | Goggles | Bras | Suit |
         Chinos| Shoes | Adidas |Shoes | Woodland Shoes | Jewellery | Designers|
         Sarees
+      </div>
+      <div className={styles.divider_with_text}>
+        <p className={styles.divider_text}></p>
+      </div>
+      <div className={styles.bottom_text}>
+        {BottomContent?.map((item, index) => {
+          return (
+            <div key={index.toString()} className="mb-8">
+              <p className={styles.heading}>{item.heading}</p>
+              <p className={styles.normal_text}>{item.description}</p>
+            </div>
+          );
+        })}
       </div>
       <div className={styles.divider_with_text}>
         <p className={styles.divider_text}></p>
