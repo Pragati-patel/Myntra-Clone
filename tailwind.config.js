@@ -15,6 +15,21 @@ module.exports = {
       fontFamily: {
         Assistant: "Assistant",
       },
+      colors: {
+        "282c3f": "#282c3f",
+        ff3f6c: "#ff3f6c",
+        535766: "#535766",
+      },
+      fontSize: {
+        10: "10px",
+        18: "18px",
+        16: "16px",
+        20: "20px",
+        14: "14px",
+        12: "12px",
+        24: "24px",
+        32: "32px",
+      },
     },
   },
   plugins: [],

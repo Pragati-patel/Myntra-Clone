@@ -1,0 +1,17 @@
+.wrapper {
+  @apply flex w-full justify-center items-center;
+  /* @apply flex w-full justify-center items-center bg-[#dee8ff]; */
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.04);
+}
+.content {
+  @apply text-535766 text-16 font-normal flex justify-center items-baseline py-4 font-Assistant px-[15px];
+}
+.main_text {
+  @apply text-535766 text-16 font-normal flex justify-center items-baseline pr-[15px] font-Assistant;
+}
+.dynamic_item {
+  @apply text-ff3f6c font-sans text-20  font-medium px-1;
+}
+.static_item {
+  @apply text-[#535766] text-[13px] font-Assistant pl-[2px] px-1;
+}
