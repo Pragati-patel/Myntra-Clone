@@ -1,0 +1,9 @@
+.wrapper {
+  @apply flex w-full p-[20px];
+}
+.breadcrumbs {
+  @apply flex font-Assistant text-282c3f text-14;
+}
+.text {
+  @apply text-16 font-Assistant font-bold text-282c3f;
+}

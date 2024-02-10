@@ -1,0 +1,13 @@
+.wrapper {
+  @apply flex max-w-[210px] w-[210px] flex-col cursor-pointer;
+}
+.wrapper:hover {
+  box-shadow: 0 2px 16px 4px rgba(40, 44, 63, 0.07);
+  background-color: white;
+}
+.heading {
+  @apply text-282c3f text-16 font-Assistant font-bold;
+}
+.subheading {
+  @apply text-535766 text-14 font-Assistant font-normal;
+}
