@@ -1,0 +1,9 @@
+.list_wrapper {
+  @apply flex w-full px-4 items-center;
+}
+.lits_item {
+  @apply text-282c3f font-Assistant font-bold px-4 flex text-14;
+}
+.right_item {
+  @apply text-12 font-Assistant font-bold text-[#000];
+}
