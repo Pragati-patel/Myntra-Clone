@@ -1,0 +1,18 @@
+.wrapper {
+  @apply p-2 flex flex-col max-w-[200px] w-[180px] justify-center items-center text-white cursor-pointer;
+}
+.sub_header {
+  @apply flex font-Assistant text-16;
+}
+.header {
+  @apply flex font-bold font-Assistant text-24;
+}
+.shop_btn {
+  @apply flex font-Assistant text-16;
+}
+.img {
+  @apply w-full h-[160px] max-h-[200px] object-cover object-top;
+}
+.content_wrapper {
+  @apply flex flex-col justify-center items-center pt-2;
+}
