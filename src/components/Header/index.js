@@ -172,7 +172,8 @@ export default function Header() {
         <Toolbar>
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Myntra_Logo.png"
-            className="w-[56px] h-[36px]" alt="logo"
+            className="w-[56px] h-[36px]"
+            alt="logo"
           />
           <div className={customStyles.list_wrapper}>
             {list?.map((item, index) => {
