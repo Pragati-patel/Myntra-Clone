@@ -1,0 +1,24 @@
+.wrapper {
+  @apply flex w-full;
+}
+.left {
+  @apply flex w-[252px] min-w-[252px] border border-edebef h-full flex-col py-[20px];
+}
+.right {
+  @apply flex flex-col w-full;
+}
+.radio_btn {
+  @apply appearance-none w-4 h-4 border border-gray-400 rounded-sm checked:bg-blue-500;
+}
+.item {
+  @apply ml-2 text-282c3f text-14 font-Assistant;
+}
+.heading {
+  @apply text-14 text-282c3f font-bold font-Assistant;
+}
+.divider {
+  @apply flex h-[1px] w-full bg-[#e9e9ed];
+}
+.card_wrapper {
+  @apply grid grid-cols-4 gap-8 px-8 w-full;
+}

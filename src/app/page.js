@@ -1,5 +1,5 @@
 "use client";
-import AnnouncementBar from "@/components/AnnouncementBar";
+import AnnouncementBar, { Banner } from "@/components/AnnouncementBar";
 import ShopByCategory from "@/components/Category/ShopByCategory";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -11,6 +11,7 @@ export default function Home() {
     <div>
       <Header />
       <AnnouncementBar />
+      <Banner />
       <HeroBanner />
       <ShopByCategory />
       <Footer />
