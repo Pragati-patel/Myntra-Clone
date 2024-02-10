@@ -13,8 +13,7 @@ export const fetchProduct = createAsyncThunk(
       "http://52.90.114.34:3000/category/viewCategory",
       { headers: headers },
     );
-    // if(response.data.status)
-    // console.log(response.data,"cvbnm")
+
     return response.data;
   },
 );
