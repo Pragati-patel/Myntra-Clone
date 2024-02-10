@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./styles.module.css";
+import { TopBanner } from "@/assets/ImagesLink";
 
 export default function AnnouncementBar() {
   return (
@@ -20,10 +21,11 @@ export default function AnnouncementBar() {
           <span className={styles.static_item}>s</span>
         </div>
       </div>
-      <img
+      <img src={TopBanner} className="mt-4" alt="top-banner" />
+      {/* <img
         src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2024/2/1/7b00a2f0-2c8f-47f8-938d-85617a3e75e91706788625897-FLAT-400-Off-on-1st-Purchase-Strip-----3.jpg"
         className="mt-4" alt="top-banner"
-      />
+      /> */}
     </>
   );
 }

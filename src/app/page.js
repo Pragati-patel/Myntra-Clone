@@ -1,6 +1,7 @@
 "use client";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
+import HeroBanner from "@/components/HeroBanner";
 import React from "react";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
     <div>
       <Header />
       <AnnouncementBar />
+      <HeroBanner />
     </div>
   );
 }
