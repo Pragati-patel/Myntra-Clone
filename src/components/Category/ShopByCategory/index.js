@@ -24,8 +24,10 @@ import { CTABannerImg, ShopByCategoryImg } from "@/assets/ImagesLink";
 import Card from "./Card";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProduct } from "@/Redux/slice";
+import { useRouter } from "next/navigation";
 
 export default function ShopByCategory() {
+  const router = useRouter();
   const [Cards, setCards] = useState(null);
   const dispatch = useDispatch();
   //   const Cards = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6, 2, 4, 4, 63];
@@ -71,7 +73,11 @@ export default function ShopByCategory() {
                   rowIndex === numRows - 1 ? numCardsInLastRow : numColumns,
               },
               (_, colIndex) => (
-                <div key={colIndex.toString()} className="mr-8">
+                <div
+                  key={colIndex.toString()}
+                  className="mr-8"
+                  onClick={() => router.push("/category")}
+                >
                   <Card data={Cards[rowIndex * numColumns + colIndex]} />
                 </div>
               ),
