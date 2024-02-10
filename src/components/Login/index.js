@@ -4,12 +4,25 @@ import { VarifyOTP, loginImg } from "@/assets/ImagesLink";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 
 import * as Yup from "yup";
+import axios from "axios";
+import { baseURL } from "@/network/axios";
+import { endPoints } from "@/network/endPoints";
+import { BaseUrl } from "../../../appConfig";
 
 export default function Login() {
   const [OPTScreen, setOPTScreen] = useState(false);
   const [contactNumber, setContactNumber] = useState(null);
   const [resentOPT, setResentOPT] = useState(false);
   const [timer, setTimer] = useState(0);
+
+  const sentOTP = (number) => {
+    axios
+      .post(BaseUrl + endPoints.sentOTP, {
+        mobile: number,
+      })
+      .then((res) => console.log(res, "res"))
+      .catch((err) => console.log(err));
+  };
 
   useEffect(() => {
     let interval;
@@ -53,9 +66,10 @@ export default function Login() {
   });
 
   const handleSubmit = (values) => {
+    setContactNumber(values.contactNumber);
     console.log(values, "[[[[[[[[[");
     setOPTScreen(true);
-    setContactNumber(values.contactNumber);
+    sentOTP(values.contactNumber);
   };
 
   return (

@@ -40,6 +40,7 @@ export default function ShopByCategory() {
   useEffect(() => {
     setCards(productList);
   }, [productList]);
+
   const numColumns = 6;
   let numRows = Math.ceil(Cards?.length / numColumns);
 
@@ -47,7 +48,7 @@ export default function ShopByCategory() {
   useEffect(() => {
     numRows = Math.ceil(Cards?.length / numColumns);
     numCardsInLastRow = Cards?.length % numColumns || numColumns;
-  }, [Cards]);
+  }, [Cards, productList]);
 
   return (
     <div className={styles.wrapper}>
