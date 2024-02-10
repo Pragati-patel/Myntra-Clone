@@ -100,6 +100,32 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <FooterContentSection />
     </div>
   );
 }
+
+const FooterContentSection = () => {
+  return (
+    <div className="w-full">
+      <div className={styles.divider_with_text}>
+        {" "}
+        POPULAR SEARCHES <p className={styles.divider_text}></p>
+      </div>
+      <div className={styles.bottom_text}>
+        Makeup | Dresses For Girls | T-Shirts | Sandals |Headphones | Babydolls
+        | Blazers For Men | Handbags |Ladies Watches | Bags |Sport Shoes| Reebok
+        Shoes | Puma Shoes | Boxers | Wallets | Tops | Earrings | Fastrack
+        Watches | Kurtis | Nike | Smart Watches | Titan Watches | Designer
+        Blouse | Gowns | Rings| Cricket| Shoes Forever 21 | Eye Makeup | Photo
+        Frames| Punjabi Suits |Bikini | Myntra Fashion Show| Lipstick |Saree
+        |Watches| Dresses | Lehenga| Nike Shoes | Goggles | Bras | Suit |
+        Chinos| Shoes | Adidas |Shoes | Woodland Shoes | Jewellery | Designers|
+        Sarees
+      </div>
+      <div className={styles.divider_with_text}>
+        <p className={styles.divider_text}></p>
+      </div>
+    </div>
+  );
+};
