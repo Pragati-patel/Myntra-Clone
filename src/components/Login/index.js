@@ -1,27 +1,53 @@
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
-import { VarifyOTP, loginImg } from "@/assets/ImagesLink";
+import { VarifyOTPImg, loginImg } from "@/assets/ImagesLink";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 
 import * as Yup from "yup";
 import axios from "axios";
-import { baseURL } from "@/network/axios";
 import { endPoints } from "@/network/endPoints";
 import { BaseUrl } from "../../../appConfig";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
+  const router = useRouter();
   const [OPTScreen, setOPTScreen] = useState(false);
   const [contactNumber, setContactNumber] = useState(null);
   const [resentOPT, setResentOPT] = useState(false);
   const [timer, setTimer] = useState(0);
-
+  const [otp, setOtp] = useState(null);
+  const [otpInput, setOtpInput] = useState(["", "", "", ""]);
   const sentOTP = (number) => {
     axios
       .post(BaseUrl + endPoints.sentOTP, {
         mobile: number,
       })
-      .then((res) => console.log(res, "res"))
+      .then((res) => {
+        console.log(res, "res11111111111111111");
+        console.log(res?.data?.Otp, "res2222222222");
+        setOtp(res?.data?.Otp);
+      })
       .catch((err) => console.log(err));
+  };
+
+  const varifyOTPAPI = (data) => {
+    axios.post(BaseUrl + endPoints.varifyOTP, {
+      mobile: contactNumber,
+      otp: parseInt(otpInput.join("")),
+    });
+  };
+
+  const varifyOTP = () => {
+    const enteredOTP = otpInput.join("");
+    console.log(otp, enteredOTP, "pppppppppp");
+    if (otp === enteredOTP) {
+      console.log("OTP Verified");
+      varifyOTPAPI();
+      router.push("/");
+      router;
+    } else {
+      window?.alert("Invalid OTP");
+    }
   };
 
   useEffect(() => {
@@ -71,6 +97,11 @@ export default function Login() {
     setOPTScreen(true);
     sentOTP(values.contactNumber);
   };
+  const handleOtpInputChange = (index, value) => {
+    const updatedOtpInput = [...otpInput];
+    updatedOtpInput[index] = value;
+    setOtpInput(updatedOtpInput);
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -79,7 +110,7 @@ export default function Login() {
           <div className="w-full bg-white p-[60px] py-[80px]">
             <img
               alt="otp-image"
-              src={VarifyOTP}
+              src={VarifyOTPImg}
               className="w-[90px] h-[90px] "
             />
             <p className={styles.heading}>Verify with OTP</p>
@@ -87,22 +118,39 @@ export default function Login() {
               Sent to {contactNumber}{" "}
             </p>
             <div className={styles.otp_container}>
-              <input className={styles.otp_input} type="text" maxlength="1" />
-              <input className={styles.otp_input} type="text" maxlength="1" />
-              <input className={styles.otp_input} type="text" maxlength="1" />
-              <input className={styles.otp_input} type="text" maxlength="1" />
+              {otpInput.map((value, index) => (
+                <input
+                  key={index}
+                  className={styles.otp_input}
+                  type="text"
+                  maxLength="1"
+                  value={value}
+                  onChange={(e) => handleOtpInputChange(index, e.target.value)}
+                />
+              ))}
             </div>
             {resentOPT ? (
               <p className={`${styles.info_line} !p-0`}>
                 Resend OTP in: <span className="text-[#000]"> {timer}</span>
               </p>
             ) : (
-              <p
-                className={`${styles.pink_text} text-12 font-bold cursor-pointer`}
-                onClick={() => setResentOPT(true)}
-              >
-                RESEND OTP{" "}
-              </p>
+              <div className=" flex flex-col">
+                <button
+                  onClick={() => varifyOTP()}
+                  className={`${styles.varifyOTP_btn}  `}
+                >
+                  Verify OTP
+                </button>
+
+                <p
+                  className={`${styles.pink_text} text-12 font-bold cursor-pointer`}
+                  onClick={() => {
+                    setResentOPT(true);
+                  }}
+                >
+                  RESEND OTP{" "}
+                </p>
+              </div>
             )}
 
             <p className={`${styles.info_line} !pb-0`}>
