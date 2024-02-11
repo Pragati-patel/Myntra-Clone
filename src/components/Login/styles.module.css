@@ -46,3 +46,6 @@
   border: 1px solid #ccc;
   outline: none;
 }
+.varifyOTP_btn {
+  @apply bg-ff3f6c text-white text-14 py-2 px-4 mb-2 rounded-md font-Assistant font-bold flex justify-center items-center w-fit;
+}
