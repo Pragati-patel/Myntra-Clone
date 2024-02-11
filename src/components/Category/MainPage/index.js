@@ -7,7 +7,9 @@ import Checkbox from "@mui/material/Checkbox";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import ProductCard from "../ProductCard";
+import { useRouter } from "next/navigation";
 export default function MainPage() {
+  const router = useRouter();
   const products = [
     1,
     2,
@@ -119,9 +121,9 @@ export default function MainPage() {
         <div className={styles.card_wrapper}>
           {currentCards.map((product, index) => {
             return (
-              <>
-                <ProductCard key={index} product={product} index={index} />
-              </>
+              <div key={index} onClick={() => router.push("/product-detail")}>
+                <ProductCard product={product} index={index} />
+              </div>
             );
           })}
         </div>
