@@ -1,5 +1,5 @@
 .wrapper {
-  @apply flex w-full;
+  @apply flex w-full px-8;
 }
 .left {
   @apply w-1/2 max-w-[50%];
