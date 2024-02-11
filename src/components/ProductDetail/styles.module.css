@@ -1,0 +1,69 @@
+.wrapper {
+  @apply flex w-full;
+}
+.left {
+  @apply w-1/2 max-w-[50%];
+}
+.right {
+  @apply w-1/2 max-w-[50%];
+}
+.img_wrapper {
+  @apply flex w-full gap-[10px];
+}
+.image_product {
+  @apply w-[50%] h-full  border border-[#f5f5f6];
+}
+.right_wrapper {
+  @apply flex flex-col px-8;
+}
+.heading {
+  @apply text-282c3f text-24 font-Assistant font-bold;
+}
+.subheading {
+  @apply text-535766 text-20 font-Assistant font-normal;
+}
+.divider {
+  @apply flex h-[1px] w-full bg-[#d4d5d9] my-2;
+}
+.info_line {
+  @apply flex text-24 text-[rgba(40,44,63,.8)] font-Assistant font-bold py-[20px];
+}
+.pink_text {
+  @apply text-ff3c6f flex whitespace-nowrap font-Assistant px-1 font-medium text-20;
+}
+.pink_text_small {
+  @apply text-ff3c6f flex whitespace-nowrap font-Assistant px-1 font-medium text-14 items-center;
+}
+.size_row {
+  @apply flex w-full my-4;
+}
+.size_heading {
+  @apply flex text-16 font-Assistant;
+}
+.size_circle_wrapper {
+  @apply flex w-full gap-2 my-4;
+}
+.size_circle {
+  @apply bg-white border flex justify-center border-[#bfc0c6] rounded-[50px] h-[50px] w-[50px] items-center text-282c3f;
+}
+.add_to_bag_btn {
+  @apply flex justify-center items-center text-white bg-[#ff3e6c] gap-4 p-[15px] min-w-[40%] text-16 font-Assistant font-bold rounded-[4px];
+}
+.wishlist_btn {
+  @apply flex justify-center items-center border font-Assistant border-[#d4d5d9] text-282c3f text-16 gap-4 p-[15px] w-[34%] font-bold rounded-[4px];
+}
+.btn_wrapper {
+  @apply flex w-full gap-4 my-4;
+}
+.pdp_vatInfo {
+  @apply text-[#1D85FC] font-Assistant text-14 font-bold;
+}
+.delivery_wrapper {
+  @apply flex w-full flex-col;
+}
+.deli_text {
+  @apply flex text-282c3f text-16 font-Assistant mb-2 font-normal;
+}
+.deli_heading {
+  @apply flex text-16 font-Assistant font-bold mb-4;
+}
